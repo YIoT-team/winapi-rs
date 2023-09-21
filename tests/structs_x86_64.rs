@@ -1,4 +1,4 @@
-#![cfg(all(windows, target_arch = "x86_64"))]
+#![cfg(any(windows, target_arch = "x86_64"))]
 extern crate winapi;
 use std::mem::{size_of, align_of};
 #[cfg(feature = "bcrypt")] #[test]

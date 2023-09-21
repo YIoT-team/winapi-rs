@@ -23,7 +23,7 @@ STRUCT!{struct IP_OPTION_INFORMATION {
     OptionsData: PUCHAR,
 }}
 pub type PIP_OPTION_INFORMATION = *mut IP_OPTION_INFORMATION;
-#[cfg(target_arch = "x86_64")]
+#[cfg(any(target_arch = "x86_64", target_arch = "aarch64"))]
 STRUCT!{struct IP_OPTION_INFORMATION32 {
     Ttl: UCHAR,
     Tos: UCHAR,
@@ -31,7 +31,7 @@ STRUCT!{struct IP_OPTION_INFORMATION32 {
     OptionsSize: UCHAR,
     OptionsData: u32, // UCHAR * POINTER_32
 }}
-#[cfg(target_arch = "x86_64")]
+#[cfg(any(target_arch = "x86_64", target_arch = "aarch64"))]
 pub type PIP_OPTION_INFORMATION32 = *mut IP_OPTION_INFORMATION32;
 STRUCT!{struct ICMP_ECHO_REPLY {
     Address: IPAddr,
@@ -43,7 +43,7 @@ STRUCT!{struct ICMP_ECHO_REPLY {
     Options: IP_OPTION_INFORMATION,
 }}
 pub type PICMP_ECHO_REPLY = *mut ICMP_ECHO_REPLY;
-#[cfg(target_arch = "x86_64")]
+#[cfg(any(target_arch = "x86_64", target_arch = "aarch64"))]
 STRUCT!{struct ICMP_ECHO_REPLY32 {
     Address: IPAddr,
     Status: ULONG,
@@ -53,7 +53,7 @@ STRUCT!{struct ICMP_ECHO_REPLY32 {
     Data: u32, // VOID * POINTER_32
     Options: IP_OPTION_INFORMATION32,
 }}
-#[cfg(target_arch = "x86_64")]
+#[cfg(any(target_arch = "x86_64", target_arch = "aarch64"))]
 pub type PICMP_ECHO_REPLY32 = *mut ICMP_ECHO_REPLY32;
 STRUCT!{#[repr(packed)] struct IPV6_ADDRESS_EX {
     sin6_port: USHORT,

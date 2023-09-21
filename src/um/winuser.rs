@@ -6720,7 +6720,7 @@ pub const GUI_INMOVESIZE: DWORD = 0x00000002;
 pub const GUI_INMENUMODE: DWORD = 0x00000004;
 pub const GUI_SYSTEMMENUMODE: DWORD = 0x00000008;
 pub const GUI_POPUPMENUMODE: DWORD = 0x00000010;
-#[cfg(target_arch = "x86_64")]
+#[cfg(any(target_arch = "x86_64", target_arch = "aarch64"))]
 pub const GUI_16BITTASK: DWORD = 0x00000000;
 #[cfg(target_arch = "x86")]
 pub const GUI_16BITTASK: DWORD = 0x00000020;

@@ -109,7 +109,7 @@ STRUCT!{struct SCSI_PASS_THROUGH32 {
     SenseInfoOffset: ULONG,
     Cdb: [UCHAR; 16],
 }}
-#[cfg(target_arch = "x86_64")]
+#[cfg(any(target_arch = "x86_64", target_arch = "aarch64"))]
 IFDEF!{
 pub type PSCSI_PASS_THROUGH32 = *mut SCSI_PASS_THROUGH32;
 STRUCT!{struct SCSI_PASS_THROUGH_DIRECT32 {
@@ -167,7 +167,7 @@ STRUCT!{struct SCSI_PASS_THROUGH_DIRECT_EX {
     Cdb: [UCHAR; ANYSIZE_ARRAY],
 }}
 pub type PSCSI_PASS_THROUGH_DIRECT_EX = *mut SCSI_PASS_THROUGH_DIRECT_EX;
-#[cfg(target_arch = "x86_64")]
+#[cfg(any(target_arch = "x86_64", target_arch = "aarch64"))]
 IFDEF!{
 STRUCT!{struct SCSI_PASS_THROUGH32_EX {
     Version: ULONG,
@@ -238,7 +238,7 @@ STRUCT!{struct ATA_PASS_THROUGH_DIRECT {
     CurrentTaskFile: [UCHAR; 8],
 }}
 pub type PATA_PASS_THROUGH_DIRECT = *mut ATA_PASS_THROUGH_DIRECT;
-#[cfg(target_arch = "x86_64")]
+#[cfg(any(target_arch = "x86_64", target_arch = "aarch64"))]
 IFDEF!{
 STRUCT!{struct ATA_PASS_THROUGH_EX32 {
     Length: USHORT,
@@ -322,7 +322,7 @@ STRUCT!{struct MPIO_PASS_THROUGH_PATH_DIRECT_EX {
     MpioPathId: ULONGLONG,
 }}
 pub type PMPIO_PASS_THROUGH_PATH_DIRECT_EX = *mut MPIO_PASS_THROUGH_PATH_DIRECT_EX;
-#[cfg(target_arch = "x86_64")]
+#[cfg(any(target_arch = "x86_64", target_arch = "aarch64"))]
 IFDEF!{
 STRUCT!{struct MPIO_PASS_THROUGH_PATH32 {
     PassThrough: SCSI_PASS_THROUGH32,
