@@ -10,7 +10,7 @@ use ctypes::{
 };
 use shared::basetsd::{KAFFINITY, LONG_PTR, ULONG64, ULONG_PTR};
 use shared::guiddef::GUID;
-#[cfg(any(target_arch = "x86_64", target_arch = "aarch64"))]
+#[cfg(target_arch = "x86_64")]
 IFDEF!{
 pub const MAX_NATURAL_ALIGNMENT: usize = 8;
 pub const MEMORY_ALLOCATION_ALIGNMENT: usize = 16;
@@ -129,7 +129,7 @@ STRUCT!{struct GROUP_AFFINITY {
     Reserved: [USHORT; 3],
 }}
 pub type PGROUP_AFFINITY = *mut GROUP_AFFINITY;
-#[cfg(any(target_arch = "x86_64", target_arch = "aarch64"))]
+#[cfg(target_arch = "x86_64")]
 pub const MAXIMUM_PROC_PER_GROUP: UCHAR = 64;
 #[cfg(not(target_arch = "x86_64"))]
 pub const MAXIMUM_PROC_PER_GROUP: UCHAR = 32;

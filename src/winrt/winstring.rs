@@ -124,25 +124,25 @@ extern "system" {
         pFlags: *const ULONG,
         ppidl: *const HSTRING,
     );
-    #[cfg(any(target_arch = "x86_64", target_arch = "aarch64"))]
+    #[cfg(target_arch = "x86_64")]
     pub fn HSTRING_UserSize64(
         pFlags: *const ULONG,
         StartingSize: ULONG,
         ppidl: *const HSTRING,
     ) -> ULONG;
-    #[cfg(any(target_arch = "x86_64", target_arch = "aarch64"))]
+    #[cfg(target_arch = "x86_64")]
     pub fn HSTRING_UserMarshal64(
         pFlags: *const ULONG,
         pBuffer: *mut UCHAR,
         ppidl: *const HSTRING,
     ) -> *mut UCHAR;
-    #[cfg(any(target_arch = "x86_64", target_arch = "aarch64"))]
+    #[cfg(target_arch = "x86_64")]
     pub fn HSTRING_UserUnmarshal64(
         pFlags: *const ULONG,
         pBuffer: *const UCHAR,
         ppidl: *mut HSTRING,
     ) -> *mut UCHAR;
-    #[cfg(any(target_arch = "x86_64", target_arch = "aarch64"))]
+    #[cfg(target_arch = "x86_64")]
     pub fn HSTRING_UserFree64(
         pFlags: *const ULONG,
         ppidl: *const HSTRING,
