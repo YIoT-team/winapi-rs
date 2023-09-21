@@ -368,6 +368,7 @@ const DATA: &'static [(&'static str, &'static [&'static str], &'static [&'static
     ("winevt", &["basetsd", "guiddef", "minwinbase", "minwindef", "vcruntime", "winnt"], &["wevtapi"]),
     ("wingdi", &["basetsd", "minwindef", "windef", "winnt"], &["gdi32", "msimg32", "opengl32", "winspool"]),
     ("winhttp", &["basetsd", "minwinbase", "minwindef", "winnt"], &["winhttp"]),
+    ("icmpapi", &["ipexport", "minwindef", "ntdef", "ws2ipdef"], &["iphlpapi"]),
     ("wininet", &["basetsd", "minwinbase", "minwindef", "ntdef", "windef", "winineti", "winnt"], &["wininet"]),
     ("winineti", &["minwindef"], &[]),
     ("winioctl", &["basetsd", "devpropdef", "guiddef", "minwindef", "winnt"], &[]),
